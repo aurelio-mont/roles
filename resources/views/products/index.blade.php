@@ -48,10 +48,9 @@
                                     </td>
                                     <td>
                                         @can('products.destroy')
-                                            <a href="{{ route('products.destroy', $product->id) }}"
-                                                    class="btn btn-outline-danger btn-sm">
-                                                Eliminar
-                                            </a>    
+                                            {!! Form::open(['route' => ['products.destroy', $product->id], 'method' => 'DELETE']) !!}
+                                                <button class="btn btn-outline-danger btn-sm">Eliminar</button>
+                                            {!! Form::close() !!}    
                                         @endcan
                                     </td>
                                 </tr>
